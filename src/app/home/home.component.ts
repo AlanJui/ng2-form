@@ -6,13 +6,23 @@ import {Employee} from '../models/employee.model';
 })
 export class HomeComponent {
   languages = ['English', 'Spanish', 'Others'];
-  model = new Employee('Darla', 'Smith', true, 'w2', 'English');
+  hasPrimaryLanguageError: boolean = false;
+  // model = new Employee('Darla', 'Smith', true, 'w2', 'English');
+  model = new Employee('', '', true, '', 'default');
 
   firstNameToUpperCase(value: string) {
     if (value.length > 0) {
       this.model.firstName = value.charAt(0).toUpperCase() + value.slice(1);
     } else {
       this.model.firstName = value;
+    }
+  }
+
+  validatePrimaryLanguage(value) {
+    if (value === 'default') {
+      this.hasPrimaryLanguageError = true;
+    } else {
+      this.hasPrimaryLanguageError = false;
     }
   }
 }
