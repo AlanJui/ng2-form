@@ -8,7 +8,7 @@
              required placeholder="First Name"
              name="firstName"
              [ngModel]="model.firstName"
-             (ngModelChange)="model.firstName=$event">
+             (ngModelChange)="firstNameToUpperCase($event)">
     </div>
 
     <!--<div class="form-group">-->
