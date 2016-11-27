@@ -20,9 +20,22 @@ export class FormPoster {
     return body.data || {};
   }
 
+  private extractLanguages(res: Response): string {
+    let body = res.json();
+    return body.data || {};
+  }
+
   private handleError(error: any) {
     console.error(`POST error: `, error);
     return Observable.throw(error.statusText);
+  }
+
+  getLanguages(): Observable<any> {
+    const API_URI = `http://localhost:3100/api/employee/get-language`;
+    return this.http.get(API_URI)
+      .delay(5000)
+      .map(this.extractLanguages)
+      .catch(this.handleError);
   }
 
   postEmployeeForm(employee: Employee): Observable<any> {

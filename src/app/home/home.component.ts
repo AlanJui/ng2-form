@@ -9,15 +9,22 @@ import {NgForm} from '@angular/forms';
   templateUrl: './home.component.html'
 })
 export class HomeComponent {
-  languages = ['English', 'Spanish', 'Others'];
+  // languages = ['English', 'Spanish', 'Others'];
+  languages = [];
   hasPrimaryLanguageError: boolean = false;
-  // model = new Employee('Darla', 'Smith', true, 'w2', 'English');
-  model = new Employee('', '', true, 'w2', 'default');
+  model = new Employee('Darla', 'Smith', true, 'w2', 'English');
+  // model = new Employee('', '', true, 'w2', 'default');
   // model = new Employee('', '', true, '', 'default');
 
   constructor(
     private formPoster: FormPoster
-  ) {}
+  ) {
+    this.formPoster.getLanguages()
+      .subscribe(
+        data => this.languages = data.languages,
+        err => console.log('getLanguages() Error: ', err)
+      );
+  }
 
   submitForm(form: NgForm) {
     // Validate form data

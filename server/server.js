@@ -13,6 +13,25 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  if (req.method.toLowerCase() === 'get') {
+    const resopnseData = {
+      data: {
+        languages: [
+          'English',
+          'Spanish',
+          'German',
+          'Other'
+        ]
+      }
+    }
+
+    const response = JSON.stringify(resopnseData);
+    res.end(response);
+
+    console.log("Response for GET: ", response);
+    return;
+  }
+
   res.end();
 });
 
