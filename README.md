@@ -19,7 +19,7 @@ PluralSight 課程-[《Angular 2 Forms》](https://app.pluralsight.com/library/c
     * webpack-dev-server
     * typescript
  
- - `WINDOWS 環境必需：` 安裝共用 NodeJS Modules:
+ - WINDOWS 環境必需安裝之「共用 NodeJS Modules」：
 
 ```
   $ npm install -g webpack webpack-dev-server typescript 
