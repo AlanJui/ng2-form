@@ -9,9 +9,19 @@ import {NgForm} from '@angular/forms';
   templateUrl: './home.component.html'
 })
 export class HomeComponent {
-  // languages = ['English', 'Spanish', 'Others'];
   languages = [];
   hasPrimaryLanguageError: boolean = false;
+  // startDate: Date;
+  startDate: Date = new Date();
+  minDate: Date = new Date('Oct 10 2016');
+  startTime: Date = new Date('Oct 1 2016 9:00 AM');
+  onOffSwitch: string = 'Off';
+  familiarityLevel: number = 1;
+  skillRating: number = 5;
+
+  /**
+   * Test Data
+   */
   model = new Employee('Darla', 'Smith', true, 'w2', 'English');
   // model = new Employee('', '', true, 'w2', 'default');
   // model = new Employee('', '', true, '', 'default');
@@ -56,5 +66,13 @@ export class HomeComponent {
     } else {
       this.hasPrimaryLanguageError = false;
     }
+  }
+
+  ratingHover(value) {
+    console.log(`hover: ${value}`);
+  }
+
+  ratingLeave(value) {
+    console.log(`leave: ${value}`);
   }
 }

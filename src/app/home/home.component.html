@@ -73,10 +73,81 @@
       </select>
     </div>
 
+    <div class="form-group">
+      <label>Familiarity</label>
+      <div class="btn-group">
+        <label class="btn btn-primary"
+               btnRadio="0"
+               name="familiarityLevel" [(ngModel)]="familiarityLevel">
+          Low
+        </label>
+        <label class="btn btn-primary"
+               btnRadio="1"
+               name="familiarityLevel" [(ngModel)]="familiarityLevel">
+          Medium
+        </label>
+        <label class="btn btn-primary"
+               btnRadio="2"
+               name="familiarityLevel" [(ngModel)]="familiarityLevel">
+          High
+        </label>
+      </div>
+      <!--<h4>{{familiarityLevel}}</h4>-->
+    </div>
+
+    <div class="form-group" style="display: inline-block;">
+      <label>Date Hired</label>
+      <datepicker name="startDate" [(ngModel)]="startDate"
+                  [startingDay]="1"
+                  [minDate]="minDate"
+                  [datepickerMode]="'day'"
+                  [showWeeks]="false">
+      </datepicker>
+      <!--<h4>{{startDate}}</h4>-->
+    </div>
+
+    <div class="form-group">
+      <label>Working Hour Start</label>
+      <timepicker name="startTime" [(ngModel)]="startTime"
+                  [minuteStep]="15">
+      </timepicker>
+      <!--<h4>{{startTime}}</h4>-->
+    </div>
+
     <!--<div class="form-group">-->
-      <!--<label>Date Hired</label>-->
-      <!--<input type="date" class="form-control">-->
+      <!--<button type="button" class="btn btn-primary"-->
+              <!--btnCheckbox-->
+              <!--btnCheckboxTrue="1" btnCheckboxFalse="0"-->
+              <!--name="onOffSwitch" [(ngModel)]="onOffSwitch">-->
+        <!--On / Off-->
+      <!--</button>-->
+      <!--<h4>{{onOffSwitch}}</h4>-->
     <!--</div>-->
+
+    <div class="form-group">
+      <label>On Project:</label>
+      <br>
+      <button type="button"
+              class="btn" [class.btn-primary]="onOffSwitch === 'On'"
+              btnCheckbox
+              btnCheckboxTrue="On" btnCheckboxFalse="Off"
+              name="onOffSwitch" [(ngModel)]="onOffSwitch">
+        {{onOffSwitch}}
+      </button>
+      <!--<h4>{{onOffSwitch}}</h4>-->
+    </div>
+
+    <div class="form-group">
+      <label>Skill Rating:</label>
+      <rating name="skillRating" [(ngModel)]="skillRating"
+              max="10"
+              (onHover)="ratingHover($event)"
+              (onLeave)="ratingLeave($event)"
+              [stateOn]="'glyphicon-check'"
+              [stateOff]="'glyphicon-unchecked'">
+      </rating>
+      <!--<h4>{{skillRating}}</h4>-->
+    </div>
 
     <button class="btn btn-primary"
             [disabled]="form.invalid"

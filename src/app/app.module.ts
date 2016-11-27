@@ -15,6 +15,16 @@ import {RepoDetailComponent} from './github/repo-detail/repo-detail.component';
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import {ContactComponent} from './contact/contact.component';
 
+/**
+ * Vendor's Modules
+ */
+import { DatepickerModule, TimepickerModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { ButtonsModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { RatingModule } from 'ng2-bootstrap/ng2-bootstrap';
+
+/**
+ * My Modules
+ */
 import {FormPoster} from './services/form-poster.service';
 
 @NgModule({
@@ -28,6 +38,10 @@ import {FormPoster} from './services/form-poster.service';
     ContactComponent
   ],
   imports: [
+    DatepickerModule,
+    TimepickerModule,
+    ButtonsModule,
+    RatingModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
