@@ -28,31 +28,31 @@ PluralSight 課程-[《Angular 2 Forms》](https://app.pluralsight.com/library/c
 
 ### 操作使用
 
- 1. 執行 git clone
+ (1) 執行 git clone
  
-```
+  ```
   $ git clone https://github.com/AlanJui/ng2-form <LocalRepoName>
-```
+  ```
  
- 2. 安裝專案所需使用之 NodeJS Modules
+ (2) 安裝專案所需使用之 NodeJS Modules
   
-```
+  ```
   $ npm install
-``` 
+  ``` 
  
- 3. 啟動 NodeJS Server
+ (3) 啟動 NodeJS Server
  
-```
+  ```
   $ npm run server
-``` 
+  ``` 
  
- 4. 啟動開發用 Web Server
+ (4) 啟動開發用 Web Server
   
-```
+  ```
   $ npm start
-```
+  ```
 
- 5. 自瀏覽器觀察輸出結果
+ (5) 自瀏覽器觀察輸出結果
  
     使用瀏覽器，觀察「網址」：[`http://localhost:3000`](http://localhost:3000)  的輸出結果。
 
