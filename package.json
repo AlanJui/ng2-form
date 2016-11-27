@@ -5,8 +5,9 @@
   "scripts": {
     "build": "webpack --progress",
     "watch": "npm run build -- --watch",
-    "server": "webpack-dev-server --inline --progress --port 3000 --content-base src",
-    "start": "npm run server"
+    "devServe": "webpack-dev-server --inline --progress --port 3000 --content-base src",
+    "server": "node ./server/server.js",
+    "start": "npm run devServe"
   },
   "contributors": [
     "Rob Wormald <robwormald@gmail.com>",
