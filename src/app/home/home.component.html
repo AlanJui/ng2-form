@@ -1,6 +1,6 @@
 <div class="container">
   <h3>Employee Forms</h3>
-  <form #form="ngForm" novalidate>
+  <form #form="ngForm" novalidate (submit)="submitForm(form)">
 
     <div class="form-group"
          [class.has-error]="firstName.invalid && firstName.touched">
@@ -19,36 +19,42 @@
       </div>
     </div>
 
-    <!--<div class="form-group">-->
-      <!--<label>Last Name</label>-->
-      <!--<input class="form-control" type="text"-->
-             <!--required placeholder="Last Name"-->
-             <!--name="lastName" [(ngModel)]="model.lastName">-->
-    <!--</div>-->
+    <div class="form-group">
+      <label>Last Name</label>
+      <input #lastName="ngModel" type="text"
+             class="form-control"
+             placeholder="Last Name"
+             required
+             name="lastName" [(ngModel)]="model.lastName">
+      <div class="alert alert-danger"
+           *ngIf="firstName.invalid && firstName.touched">
+        Last name is required, and must be at least 3 characters.
+      </div>
+    </div>
 
-    <!--<div class="checkbox">-->
-      <!--<label>-->
-        <!--<input type="checkbox"-->
-               <!--name="is-full-time"-->
-               <!--[(ngModel)]="model.isFullTime">Full Time Employee-->
-      <!--</label>-->
-    <!--</div>-->
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"
+               name="is-full-time"
+               [(ngModel)]="model.isFullTime">Full Time Employee
+      </label>
+    </div>
 
-    <!--<label>Payment Type</label>-->
-    <!--<div class="radio">-->
-      <!--<label>-->
-        <!--<input type="radio" name="paymentType"-->
-               <!--[(ngModel)]="model.paymentType"-->
-               <!--value="w2" checked>W2-->
-      <!--</label>-->
-    <!--</div>-->
-    <!--<div class="radio">-->
-      <!--<label>-->
-        <!--<input type="radio" name="paymentType"-->
-               <!--[(ngModel)]="model.paymentType"-->
-               <!--value="1099">1099-->
-      <!--</label>-->
-    <!--</div>-->
+    <label>Payment Type</label>
+    <div class="radio">
+      <label>
+        <input type="radio" name="paymentType"
+               [(ngModel)]="model.paymentType"
+               value="w2" checked>W2
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="paymentType"
+               [(ngModel)]="model.paymentType"
+               value="1099">1099
+      </label>
+    </div>
 
     <div class="form-group"
          [class.has-error]="hasPrimaryLanguageError">
