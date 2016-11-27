@@ -22,9 +22,8 @@ PluralSight 課程-[《Angular 2 Forms》](https://app.pluralsight.com/library/c
  - `WINDOWS 環境必需：` 安裝共用 NodeJS Modules:
 
 ```
-  npm install -g webpack webpack-dev-server typescript 
+  $ npm install -g webpack webpack-dev-server typescript 
 ```
-
   
 
 ### 操作使用
@@ -41,6 +40,7 @@ PluralSight 課程-[《Angular 2 Forms》](https://app.pluralsight.com/library/c
   $ npm install
 ``` 
  
+<<<<<<< HEAD
  3. 啟動 NodeJS Server
  
 ```
@@ -54,6 +54,15 @@ PluralSight 課程-[《Angular 2 Forms》](https://app.pluralsight.com/library/c
 ```
 
  5. 自瀏覽器觀察輸出結果
+=======
+ 3. 啟動開發用 Web Server
+  
+  ```angular2html
+  $ npm start
+```
+
+ 4. 自瀏覽器觀察輸出結果
+>>>>>>> 76f919c83118b1d830afd9ffc8f3de57d52f8861
  
     使用瀏覽器，觀察「網址」：[`http://localhost:3000`](http://localhost:3000)  的輸出結果。
 
